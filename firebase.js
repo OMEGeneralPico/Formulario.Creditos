@@ -47,7 +47,7 @@ async function readJson() {
             if (xhr.status === 200) {
                 resolve(xhr.responseText);
             } else {
-                reject(new Error(`Error cargando JSON: ${xhr.statusText}`));
+                reject(new Error(`Error cargando ele JSON: ${xhr.statusText}`));
             }
         };
 
