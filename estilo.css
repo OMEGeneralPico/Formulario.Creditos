@@ -101,3 +101,14 @@ canvas {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+@media only screen and (max-width: 768px) {
+    /* Tus estilos para dispositivos móviles van aquí */
+    body {
+      font-size: 14px;
+      
+    }
+    .constainer{
+        padding-right: 0vw;
+        padding-left: 0vw;
+    }
+}
