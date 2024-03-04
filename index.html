@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Sheets API Example</title>
+    <link rel="stylesheet" href="/estilo.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+
+<body style="display: flex; justify-content: center; align-items: center;height: 100vh;overflow:hidden; ">
+
+    <div class="constainer">
+        <div class="login-box">
+            <img src="picoletra 4.png" alt="Imagen de login" class="imagen-login">
+
+
+            <label for="dni">Introduzca DNI:</label>
+            <input type="text" id="dni" name="dni" placeholder="Ingrese su DNI">
+            <button onclick="getData()">Cargar otra página</button>
+        </div>
+    </div>
+
+
+    <script>
+        function loadAnotherPage() {
+            /*   <button type="button" onclick="ocultarFormularioCarga()">Ocultar formulario de carga</button>
+                        <div class="progress">
+            
+                            <div class="progress-bar progress-bar-info" id="barra" role="progressbar" aria-valuenow="50"
+                                aria-valuemin="0" aria-valuemax="100" style="width:99%">
+                                50% Complete (info)
+                            </div>
+                        </div>*/
+            // Redirige a otra página al hacer clic en el botón
+            //  window.location.href = 'formulario.html';
+
+        }
+    </script>
+    <script>
+        function ocultarFormularioCarga() {
+
+            var barra = document.getElementById("barra");
+
+            barra.style.width = "10%";
+            console.log(barra);
+
+        }
+    </script>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="leer.js"></script>
+</body>
+
+</html>

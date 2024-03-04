@@ -1,0 +1,19 @@
+{
+    "apis": {
+        "firebase": {
+            "apiKey": "AIzaSyDBKogujLycwTM6cS6WDMzmSYu5A5AEH3Q",
+            "authDomain": "formulario-creditos.firebaseapp.com",
+            "projectId": "formulario-creditos",
+            "storageBucket": "formulario-creditos.appspot.com",
+            "messagingSenderId": "846956751410",
+            "appId": "1:846956751410:web:174eed6db586302d672a2b"
+        },
+        "gsheet": {
+            "apiKey": "AIzaSyD6P4JZkeO6AxE5DcRgSMf9tXZigMMimcc",
+            "discoveryDocs": [
+                "https://sheets.googleapis.com/$discovery/rest?version=v4"
+            ],
+            "spreadsheetId": "15Meqd1b9lt31FBTSdPaqyLUgX_M7K6BaDLuPP-4tqCs"
+        }
+    }
+}

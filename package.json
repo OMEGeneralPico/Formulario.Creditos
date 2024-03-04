@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "firebase": "^10.8.0"
+  },
+  "name": "formulario-maricel",
+  "version": "1.0.0",
+  "main": "dates.js",
+  "devDependencies": {
+    "firebase-tools": "^13.2.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
