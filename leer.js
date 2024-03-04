@@ -3,7 +3,7 @@ async function readJson() {
     const xhr = new XMLHttpRequest();
 
     // Abre la solicitud
-    xhr.open('GET', 'cod.json');
+    xhr.open('GET', '/cod.json');
 
     // Espera a que la solicitud se complete
     const response = await new Promise((resolve, reject) => {
