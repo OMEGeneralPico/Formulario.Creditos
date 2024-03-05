@@ -26,9 +26,7 @@ body {}
 
 
 #formulariocarga {
-    position: fixed;
-    top: 0;
-    left: 0;
+    
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
@@ -41,8 +39,7 @@ body {}
 .container-fluid {
     background-color: rgba(245, 245, 245, 0.944);
     width: 100vw;
-    padding-left: 2vw;
-    padding-right: 4vw;
+
     
     justify-content: center;
     align-items: center;
@@ -101,7 +98,6 @@ canvas {
       
     }
     .constainer{
-        padding-right: 20vw;
-        padding-left: 20vw;
+ 
     }
 }
