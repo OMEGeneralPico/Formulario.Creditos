@@ -4,7 +4,7 @@ async function readJson( ) {
     var ruta = 'cod.json';
     try{
         xhr.open('GET', ruta);
-        console.log(index);
+       
         // Espera a que la solicitud se complete
         const response = await new Promise((resolve, reject) => {
             xhr.onload = () => {
@@ -21,7 +21,7 @@ async function readJson( ) {
     }catch{
         ruta = '../cod.json';
         xhr.open('GET', ruta);
-        console.log(index);
+   
         // Espera a que la solicitud se complete
         const response = await new Promise((resolve, reject) => {
             xhr.onload = () => {
