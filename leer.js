@@ -1,9 +1,9 @@
 var glob;
-async function readJson() {
+async function readJson( index = true) {
     const xhr = new XMLHttpRequest();
-
+    var ruta = index ? 'cod.json' : '../cod.json'
     // Abre la solicitud
-    xhr.open('GET', 'cod.json');
+    xhr.open('GET', ruta);
 
     // Espera a que la solicitud se complete
     const response = await new Promise((resolve, reject) => {
