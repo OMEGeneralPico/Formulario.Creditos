@@ -38,7 +38,7 @@ body {}
     align-items: center;
 }
 
-.constainer {
+.container-fluid {
     background-color: rgba(245, 245, 245, 0.944);
     width: 100vw;
     padding-left: 2vw;
