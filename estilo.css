@@ -43,18 +43,11 @@ body {}
     width: 100vw;
     padding-left: 2vw;
     padding-right: 4vw;
-    display: flex;
+    
     justify-content: center;
     align-items: center;
 }
 
-.container-fluid {
-    background-color: rgba(245, 245, 245, 0.944);
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 #cierre {
     align-self: center;
