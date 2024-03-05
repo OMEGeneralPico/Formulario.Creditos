@@ -1,23 +1,44 @@
 var glob;
-async function readJson( index = true) {
+async function readJson( ) {
     const xhr = new XMLHttpRequest();
-    var ruta = index ? 'cod.json' : '../cod.json'
+    var ruta = 'cod.json';
+    try{
+        xhr.open('GET', ruta);
+        console.log(index);
+        // Espera a que la solicitud se complete
+        const response = await new Promise((resolve, reject) => {
+            xhr.onload = () => {
+                if (xhr.status === 200) {
+                    resolve(xhr.responseText);
+                } else {
+                    reject(new Error(`Error cargando JSON: ${xhr.statusText}`));
+                }
+            };
+    
+            xhr.onerror = reject;
+            xhr.send();
+        });
+    }catch{
+        ruta = '../cod.json';
+        xhr.open('GET', ruta);
+        console.log(index);
+        // Espera a que la solicitud se complete
+        const response = await new Promise((resolve, reject) => {
+            xhr.onload = () => {
+                if (xhr.status === 200) {
+                    resolve(xhr.responseText);
+                } else {
+                    reject(new Error(`Error cargando JSON: ${xhr.statusText}`));
+                }
+            };
+    
+            xhr.onerror = reject;
+            xhr.send();
+        });
+        
+    }
     // Abre la solicitud
-    xhr.open('GET', ruta);
-
-    // Espera a que la solicitud se complete
-    const response = await new Promise((resolve, reject) => {
-        xhr.onload = () => {
-            if (xhr.status === 200) {
-                resolve(xhr.responseText);
-            } else {
-                reject(new Error(`Error cargando JSON: ${xhr.statusText}`));
-            }
-        };
-
-        xhr.onerror = reject;
-        xhr.send();
-    });
+  
 
     // Parsea la respuesta JSON
     const data = JSON.parse(response);
