@@ -31,7 +31,7 @@
             
         </div>
 
-        <div class="container-fluid" style="padding: 5vh;" id="Box">
+        <div class="container-fluid "  style="padding: 5vh;" id="Box">
 
             <div class="row">
                 <div class="col-sm-12">
@@ -40,6 +40,18 @@
             </div>
             <div class="row">
                 <h1>Formulario Credito</h1>
+                <div class="d-grid gap-2">
+                    <button
+                        type="button"
+                        
+                        name=""
+                        id="botonfinal"
+                        class="btn btn-primary"
+                    >   
+                        Button
+                    </button>
+                </div>
+                
                 <div class="col-sm-12"> <b> 1. Informacion Personal</b>
                     <form class="form" id="form" method="POST">
                         <div class="row">
@@ -895,29 +907,26 @@
         </div>
         
 
-        <div id="message" style="
-    display: none;
-    margin: 20px;
-    font-weight: bold;
-    color: green;
-    padding: 8px;
-    background-color: beige;
-    border-radius: 4px;
-    border-color: aquamarine;
-  ">assssd</div>
+    
     </div>
     </div>
 
     </div>
 
-    <div id="formulariocarga" class="d-none">
-        <div class="contenedor-carga">
-            <div class="progress">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
-                    aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
-                <label for="formulariocarga" class="label-carga">Cargando</label>
-            </div>
-        </div>
+    <div id="cargando" >
+        
+           <div
+            class="container"
+           >
+           <b>Subiendo los archivos</b>
+           <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+          </div>
+           </div>
+           
+      
+           
+       
     </div>
 
 </body>

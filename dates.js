@@ -398,9 +398,13 @@ function mostrarFormularioCarga(total) {
      barra.setAttribute("aria-valuenow", 0);
  */
 }
+function OcultarFormulario(){
+    var oculta = document.getElementById("Box");
+    oculta.style.display = 'none';
+    var barra = document.getElementById("cargando").style.display = 'block'
+}
 
-
-
+document.getElementById("botonfinal").addEventListener('click',OcultarFormulario);
 // Ejemplo de uso
 
 // Simulamos una carga de 2 segundos
