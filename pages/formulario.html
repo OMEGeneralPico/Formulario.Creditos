@@ -727,44 +727,45 @@
                                     <b> Segundo Garante </b>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-6"> <label for="nombreGarantia" class="mr-sm-2">Nombre</label>
+                            
+                          
+                                <div class="col-12 col-lg-6"> <label for="nombreGarantia" class="mr-sm-2">Nombre</label>
                                     <input type="string" class="form-control form-control-lg mb-2" placeholder=""
                                         name="nombreGarantia2" required>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-12 col-lg-6">
                                     <label for="apellidoGarantia" class="mr-sm-2">Apellido</label>
                                     <input type="text" class="form-control form-control-lg mb-2" placeholder=""
                                         name="apellidoGarantia2" required>
                                 </div>
-                            </div>
-                            <div class="col-12">
+                      
+                            <div class="col-12 col-lg-12">
                                 <label for="cuitGarantia" class="mr-sm-2">CUIT/CUIL</label>
                                 <input type="string" class="form-control form-control-lg mb-2" placeholder=""
                                     name="cuitGarantia2" required>
                             </div>
                             <div class="row">
-                                <div class="col-2">
+                                <div class="col-6 col-lg-2">
                                     <label for="CalleGarantia" class="mr-sm-2">Calle</label>
                                     <input type="string" class="form-control form-control-lg mb-2" placeholder=""
                                         name="CalleGarantia2" required>
                                 </div>
-                                <div class="col-2">
+                                <div class="col-6 col-lg-2">
                                     <label for="EntreGarantia" class="mr-sm-2">Entre</label>
                                     <input type="string" class="form-control form-control-lg mb-2" placeholder=""
                                         name="EntreGarantia2" required>
                                 </div>
-                                <div class="col-2">
+                                <div class="col-6 col-lg-2">
                                     <label for="EntreGarantia2" class="mr-sm-2">Y</label>
                                     <input type="string" class="form-control form-control-lg mb-2" placeholder=""
                                         name="YGarantia2" required>
                                 </div>
-                                <div class="col-2">
+                                <div class="col-6 col-lg-2">
                                     <label for="alturaGarantia" class="mr-sm-2">Numero</label>
                                     <input type="string" class="form-control form-control-lg mb-2" placeholder=""
                                         name="alturaGarantia2" required>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-12 col-lg-4">
                                     <label for="barrioGarantia" class="mr-sm-2">Barrio</label>
                                     <input type="string" class="form-control form-control-lg mb-2" placeholder=""
                                         name="barrioGarantia2" required>
@@ -773,10 +774,10 @@
                             <div class="row">
                                 <div class="col-12">
                                     <label for="barrioPersona" class="mr-sm-2">Fecha Nacimiento</label>
-
+    
                                 </div>
-                                <div class="col-12"> <input type="date" style="width: 80%; height: 100%;"
-                                        value="2017-06-01" required>
+                                <div class="col-12"> <input type="date" class="form-control form-control-lg mb-2"  value="2017-06-01"
+                                        required>
                                 </div>
                             </div>
                             <div class="row">
@@ -801,15 +802,16 @@
                                     </div><br><br><br>
                                     <div class="col-12">
                                         <label for="Trabajo2">Empleo:</label><br>
+                                        <div class="col-12">
                                         <input type="radio" name="TrabajoGarante2" id="TrabajoGarante2" value="Empleado"
                                             required>
-                                        <label for="Trabajo2">Empleado</label>
+                                        <label for="Trabajo2">Empleado</label></div>   <div class="col-12">
                                         <input type="radio" name="TrabajoGarante2" id="TrabajoGarante2"
                                             value="Monotributo / Responsable Inscripto" required>
-                                        <label for="FemeninoG">Monotributo / Responsable Inscripto</label>
-
+                                        <label for="FemeninoG">Monotributo / Responsable Inscripto</label></div>
+                                        <br>
                                     </div>
-                                </div><br><br><br>
+                                </div>
                                 <div class="col-6">
                                     <label for="CategoriaGarante" class="mr-sm-2">Categoria <i
                                             class="fas fa-question-circle" aria-hidden="true" data-toggle="tooltip"
@@ -827,7 +829,7 @@
 
                                 </div>
                                 <div class="row">
-                                    <div class="col-6">
+                                    <div class="col-12 col-lg-4">
                                         <label for="IngresosGarante" class="mr-sm-2">Ingresos anuales <i
                                                 class="fas fa-question-circle" aria-hidden="true" data-toggle="tooltip"
                                                 data-placement="top"
@@ -837,30 +839,30 @@
                                         <input type="text" class="form-control form-control-lg mb-2" placeholder=""
                                             name="DDJJGarante2" id="DDJJGarante2" style="display: none;">
                                     </div>
-                                    <div class="col-6 d-flex align-items-center">
+                                    <div class="col-12 col-lg-6 d-flex align-items-center">
                                         <input type="file" class="DDJJ Marcha form-control form-control-lg"
                                             multiple="false">
                                     </div>
+                                   
 
-
-                                </div>
+                                </div> 
                                 <div class="row">
-                                    <div class="col-sm-12">
+                                    <div class="col-sm-12"><br>
                                         <b> Empleador del garante</b>
                                     </div>
                                 </div>
-                                <div class="col-4"><label for="NombreEmpleadorGarante" class="mr-sm-2">Nombre</label>
+                                <div class="col-12 col-lg-4"><label for="NombreEmpleadorGarante" class="mr-sm-2">Nombre</label>
                                     <input type="text" class="form-control form-control-lg mb-2" placeholder=""
                                         name="NombreEmpleadorGarante2">
                                 </div>
-                                <div class="col-4"><label for="ApellidoEmpleadorGarante"
+                                <div class="col-12 col-lg-4"><label for="ApellidoEmpleadorGarante"
                                         class="mr-sm-2">Apellido</label>
                                     <input type="text" class="form-control form-control-lg mb-2" placeholder=""
                                         name="ApellidoEmpleadorGarante2">
                                 </div>
-                                <div class="col-4"><label for="CUITEmpleadorGarante" class="mr-sm-2">CUIT/CUIL</label>
+                                <div class="col-12 col-lg-4"><label for="CUITEmpleadorGarante" class="mr-sm-2">CUIT/CUIL</label>
                                     <input type="text" class="form-control form-control-lg mb-2" placeholder=""
-                                        name="CUITEmpleadorGarante2"><br><br><br><br>
+                                        name="CUITEmpleadorGarante2"><br><br><br>
                                 </div>
                                 <div class="row">
                                 </div>
@@ -891,7 +893,7 @@
             </div>
 
         </div>
-        <div>Hola</div>
+        
 
         <div id="message" style="
     display: none;
