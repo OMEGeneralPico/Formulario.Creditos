@@ -11,7 +11,7 @@ div {
     font-weight: bold;
 }
 
-body {}
+body {background-color: rgba(245, 245, 245, 0.944);}
 
 .label-carga {
     font-size: 18px;

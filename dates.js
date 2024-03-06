@@ -187,6 +187,7 @@ function addDiv(tipo) {
     inputText.setAttribute("type", "text");
     inputText.setAttribute("id", "cell1Input");
     inputText.classList.add("form-control");
+   
     inputText.classList.add("form-control-lg");
     cell1.textContent = ""; // Elimina el texto "Nuevo dato 1"
     cell1.appendChild(inputText); // Agrega el input text a la celda
