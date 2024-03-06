@@ -28,7 +28,9 @@ body {}
     height: 40px;
     border-radius: 10px;
 }
-
+table {
+    border-collapse: collapse;
+}
 
 #formulariocarga {
 
