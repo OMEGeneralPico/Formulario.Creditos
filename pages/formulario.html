@@ -344,6 +344,7 @@
                                     id="EqupamientoCant" name="EqupamientoCant" value="2" style="display: none;">
                                 <input type="text" class="form-control form-control-lg mb-2" placeholder="a"
                                     id="EqupamientoPrecio" name="EqupamientoPrecio" value="3" style="display: none;">
+                                    <div class="hidden-mobile">
                                 <table class="table" id="myTable">
                                     <thead>
                                         <tr>
@@ -377,6 +378,29 @@
 
                                 </table> <a name="añadirEquip" id="añadirEquip" class="btn btn-success"
                                     role="button">Añadir</a>
+                                </div>
+                                <div class="show-mobile">
+                                    <button type="button" class="btn btn-success">Ver equipamientos</button>
+                                    <div class="modal" tabindex="-1" role="dialog">
+                                        <div class="modal-dialog" role="document">
+                                          <div class="modal-content">
+                                            <div class="modal-header">
+                                              <h5 class="modal-title">Modal title</h5>
+                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                              </button>
+                                            </div>
+                                            <div class="modal-body">
+                                              <p>Modal body text goes here.</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                              <button type="button" class="btn btn-primary">Save changes</button>
+                                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                </div>
                             </div><br>
                         </div>
                         <div class="col-sm-12">
@@ -389,6 +413,7 @@
                                 id="InsumosCant" name="InsumosCant" value="2" style="display: none;">
                             <input type="text" class="form-control form-control-lg mb-2" placeholder="a"
                                 id="InsumosPrecio" name="InsumosPrecio" value="3" style="display: none;">
+                        <div class="hidden-mobile">
                             <table class="table">
                                 <thead class="thead-dark">
                                     <tr>
@@ -419,7 +444,31 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <a name="añadirIns" id="añadirIns" class="btn btn-success" role="button">Añadir</a> <br><br>
+                            <a name="añadirIns" id="añadirIns" class="btn btn-success" role="button">Añadir</a> </div>
+                            <div class="show-mobile">
+                                <button type="button" class="btn btn-success">Ver Insumos</button>
+                                <div class="modal" tabindex="-1" role="dialog">
+                                    <div class="modal-dialog" role="document">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title">Modal title</h5>
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button>
+                                        </div>
+                                        <div class="modal-body">
+                                          <p>Modal body text goes here.</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-primary">Save changes</button>
+                                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+                            
+                            <br>
                          </div>
                         <input type="text" name="equpamientoUrl" id="equpamientoUrl" style="display: none;">
                         <input type="text" name="insumosUrl" id="insumosUrl" style="display: none;">
@@ -434,7 +483,7 @@
                             <input type="text" class="form-control form-control-lg mb-2" placeholder="a" id="OtrosCant"
                                 name="OtrosCant" value="2" style="display: none;">
                             <input type="text" class="form-control form-control-lg mb-2" placeholder="a"
-                                id="OtrosPRecio" name="OtrosPRecio" value="3" style="display: none;">
+                                id="OtrosPRecio" name="OtrosPRecio" value="3" style="display: none;">   <div class="hidden-mobile">
                             <table class="table">
                                 <thead>
                                     <tr>
@@ -467,7 +516,31 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <td> <a name="añadirOtros" id="añadirOtros" class="btn btn-success" role="button">Añadir</a> <br>
+                            <td> <a name="añadirOtros" id="añadirOtros" class="btn btn-success" role="button">Añadir</a></div> 
+                                <div class="show-mobile">
+                                    <button type="button" class="btn btn-success">Ver Otros</button>
+                                    <div class="modal" tabindex="-1" role="dialog">
+                                        <div class="modal-dialog" role="document">
+                                          <div class="modal-content">
+                                            <div class="modal-header">
+                                              <h5 class="modal-title">Modal title</h5>
+                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                              </button>
+                                            </div>
+                                            <div class="modal-body">
+                                              <p>Modal body text goes here.</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                              <button type="button" class="btn btn-primary">Save changes</button>
+                                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                </div>
+                                
+                                <br>
                             </td>
                         
                         <br>
@@ -913,14 +986,14 @@
 
     </div>
 
-    <div id="cargando" >
-        
+    <div >
+        <br>
            <div
-            class="container"
+            class="container" 
            >
-           <b>Subiendo los archivos</b>
+           <b id="mensajito">Subiendo los archivos</b>
            <div class="progress">
-            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+            <div  id="cargando" class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
           </div>
            </div>
            

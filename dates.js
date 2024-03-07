@@ -6,8 +6,8 @@ document.getElementById("form").addEventListener("submit", async function (e) {
     var nombreFormulario = document.getElementById("Nombre").value + "_" + document.getElementById("Apellido").value;
     var total = 3 + 6 + 2 + enMarcha ? 1 : 0 + 3 + 2 + 1;
     mostrarFormularioCarga(total);
-    document.getElementById("message").textContent = "Submitting..";
-    document.getElementById("message").style.display = "block";
+    barra.style.width = '6%';
+    mensajito.textContent = 'Organizando archivos';
     document.getElementById("submit-button").disabled = true;
     var EquipamientoDetalle = "";
     var EquipamientoCantidad = "";
@@ -18,6 +18,7 @@ document.getElementById("form").addEventListener("submit", async function (e) {
     var OtrosDetalle = "";
     var OtrosCantidad = "";
     var OtrosPrecio = "";
+    
     for (let index = 0; index < Equipamiento[0].length; index++) {
         EquipamientoDetalle += Equipamiento[0][index].value + ";";
         EquipamientoCantidad += Equipamiento[1][index].value + ";";
@@ -46,7 +47,10 @@ document.getElementById("form").addEventListener("submit", async function (e) {
     var checkboxes = document.querySelectorAll('input[type="checkbox"][name="zona"]:checked');
     console.log(archivos);
     var constanciasOrden = ["DNIConstancia", "CUITConstancia", "CBUConstancia", "IIBBConstancia", "HabilitacionConstancia", "LocacionConstancia"];
-
+    barra.style.width = '10%';
+    let sumatoria = 10 / Object.keys(archivos).length;
+    let sumaactual = 10;
+    mensajito.textContent = 'Subiendo constancias';
     for (let archivito = 0; archivito < Object.keys(archivos).length; archivito++) {
 
 
@@ -55,10 +59,15 @@ document.getElementById("form").addEventListener("submit", async function (e) {
         var url2 = String(newUrl)
         console.log("Nueva url " + newUrl);
         var miInput = document.getElementById(constanciasOrden[archivito] + "Form");
+        sumaactual +- sumatoria;
+        barra.style.width = sumaactual.toString() + '%';
 
         miInput.setAttribute("value", url2);
-    }
+    } 
+    mensajito.textContent = 'Subiendo Declaraciones Juradas';
+    barra.style.width = '25%';
     var garante = await subirArchivo(document.getElementById("GaranteDecla"), nombreFormulario, "Garante_1_DDJJ");
+    barra.style.width = '28%';
     garante = separarString(garante, posicionCorte);
     var miInput = document.getElementById("DDJJGarante");
     miInput.setAttribute("value", garante);
@@ -67,22 +76,32 @@ document.getElementById("form").addEventListener("submit", async function (e) {
     garante2 = separarString(garante2, posicionCorte);
     var miInput2 = document.getElementById("DDJJGarante2");
     miInput2.setAttribute("value", garante2);
+    barra.style.width = '30%';
     ////////////////////////////
     if (enMarcha) {
         var ddjjmarcha = await subirArchivo(document.getElementById("Marcha"), nombreFormulario, "Ingresos_DDJJ");
         ddjjmarcha = separarString(ddjjmarcha, posicionCorte);
         var miInput3 = document.getElementById("MarchaForm");
         miInput3.setAttribute("value", ddjjmarcha);
+        barra.style.width = '35%';
     }
+   
     /////////////////////////
     var urlEquip = [];
+    mensajito.textContent = 'Subiendo Presupuestos';
+    barra.style.width = '40%';
 
+     sumatoria = 40 / EqupamientoComprombant.length + InsumosComprobante.length + OtrosComprombant.length;
+     sumaactual = 40;
     for (let index = 0; index < EqupamientoComprombant.length; index++) {
 
         urlEquip.push(await subirArchivo(EqupamientoComprombant[index], nombreFormulario + "/Equipamientos", "Comprobante_" + index));
         var newUrl = separarString(urlEquip[index], posicionCorte);
         urlEquip[index] = String(newUrl)
         console.log("Nueva url " + newUrl);
+        sumaactual +- sumatoria;
+        barra.style.width = sumaactual.toString() + '%';
+
 
     }
     //// hacer que pase la url solo la url, el resto ya lo estoy pasando
@@ -92,6 +111,8 @@ document.getElementById("form").addEventListener("submit", async function (e) {
         var newUrl = separarString(urlInsumos[index], posicionCorte);
         urlInsumos[index] = String(newUrl)
         console.log("Nueva url " + newUrl);
+        sumaactual +- sumatoria;
+        barra.style.width = sumaactual.toString() + '%';
     }
 
     var urlOtros = [];
@@ -102,6 +123,8 @@ document.getElementById("form").addEventListener("submit", async function (e) {
         var newUrl = separarString(urlOtros[index], posicionCorte);
         urlOtros[index] = String(newUrl)
         console.log("Nueva url " + newUrl);
+        sumaactual +- sumatoria;
+        barra.style.width = sumaactual.toString() + '%';
     }
 
 
@@ -149,33 +172,35 @@ document.getElementById("form").addEventListener("submit", async function (e) {
     )
         .then(function (response) {
             // Check if the request was successful
-            if (response) {
+            if (response) {  
+                barra.classList.remove("bg-success");
+           
+                mensajito.textContent = 'Datos completados!';
+                barra.style.width = '100%';
+            
                 return response; // Assuming your script returns JSON response
             } else {
                 throw new Error("Failed to submit the form.");
             }
         })
         .then(function (data) {
-            // Display a success message
-            document.getElementById("message").textContent =
-                "Data submitted successfully!";
-            document.getElementById("message").style.display = "block";
-            document.getElementById("message").style.backgroundColor = "green";
-            document.getElementById("message").style.color = "beige";
+          
             document.getElementById("submit-button").disabled = false;
             document.getElementById("form").reset();
 
             setTimeout(function () {
-                document.getElementById("message").textContent = "";
-                document.getElementById("message").style.display = "none";
+              
+                mensajito.textContent = 'Subiendo datos finales';
+                barra.style.width = '80%';
             }, 2600);
         })
         .catch(function (error) {
             // Handle errors, you can display an error message here
             console.error(error);
-            document.getElementById("message").textContent =
-                "An error occurred while submitting the form.";
-            document.getElementById("message").style.display = "block";
+            barra.classList.remove("bg-success");
+            barra.classList.add("bg-danger");
+            mensajito.textContent = 'Error';
+            barra.style.width = '100%';
         });
 });
 function addDiv(tipo) {
@@ -401,9 +426,13 @@ function mostrarFormularioCarga(total) {
 function OcultarFormulario(){
     var oculta = document.getElementById("Box");
     oculta.style.display = 'none';
-    var barra = document.getElementById("cargando").style.display = 'block'
+    barra.style.display = 'block'
+    barra.style.width = '6%';
+    mensajito.textContent = 'Organizando archivos';
+    console.log('a');
 }
-
+var barra = document.getElementById("cargando");
+var mensajito = document.getElementById("mensajito");
 document.getElementById("botonfinal").addEventListener('click',OcultarFormulario);
 // Ejemplo de uso
 
