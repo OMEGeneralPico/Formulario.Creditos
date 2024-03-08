@@ -51,7 +51,7 @@
         
         <!-- Pie del modal con botones de cierre -->
         <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Subir</button>
+            <button type="button" class="btn btn-secondary" id="tablamovilguardar" data-bs-dismiss="modal">Subir</button>
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
         </div>
         
@@ -411,16 +411,23 @@
                                     role="button">Añadir</a>
                                 </div>
                                 <div class="show-mobile">
-                                   <!-- Botón que activa el modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#miModal">
-    Abrir Modal
-  </button>
-  
-  <!-- Estructura del modal -->
-  
-
-
-                                      
+                                    <table id="tablaEquipamientosShort" class="table">
+                                        <thead>
+                                          <tr>
+                                            <th scope="col">Det.</th>
+                                            <th scope="col">Cant.</th>
+                                            <th scope="col">$</th>
+                                            <th scope="col-1">Doc</th>
+                                            <th scope="col"></th>
+                                            
+                                          </tr>
+                                        </thead>
+                                        <tbody class="table-striped">
+                                        
+                                        </tbody>
+                                      </table>   <button type="button" id="añadirEquipShort" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#miModal">
+                                        Agregar otros presupuestos
+                                      </button>
                                 </div>
                             </div><br>
                         </div>
@@ -467,26 +474,23 @@
                             </table>
                             <a name="añadirIns" id="añadirIns" class="btn btn-success" role="button">Añadir</a> </div>
                             <div class="show-mobile">
-                                <button type="button" class="btn btn-success">Ver Insumos</button>
-                                <div class="modal" tabindex="-1" role="dialog">
-                                    <div class="modal-dialog" role="document">
-                                      <div class="modal-content">
-                                        <div class="modal-header">
-                                          <h5 class="modal-title">Modal title</h5>
-                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                          </button>
-                                        </div>
-                                        <div class="modal-body">
-                                          <p>Modal body text goes here.</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                          <button type="button" class="btn btn-primary">Save changes</button>
-                                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
+                                <table id="tablaInsumosShort" class="table">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col">Det.</th>
+                                        <th scope="col">Cant.</th>
+                                        <th scope="col">$</th>
+                                        <th scope="col-1">Doc</th>
+                                        <th scope="col"></th>
+                                        
+                                      </tr>
+                                    </thead>
+                                    <tbody class="table-striped">
+                                    
+                                    </tbody>
+                                  </table>   <button type="button" id="añadirInsumShort" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#miModal">
+                                    Agregar otros presupuestos
+                                  </button>
                             </div>
                             
                             <br>
@@ -540,7 +544,7 @@
                             <td> <a name="añadirOtros" id="añadirOtros" class="btn btn-success" role="button">Añadir</a></div> 
                                 <div class="show-mobile">
                                  
-                                      <table class="table">
+                                      <table id="tablaOtrosShort" class="table">
                                         <thead>
                                           <tr>
                                             <th scope="col">Det.</th>
@@ -554,7 +558,7 @@
                                         <tbody class="table-striped">
                                         
                                         </tbody>
-                                      </table>   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#miModal">
+                                      </table>   <button type="button" id="añadirOtrosShort" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#miModal">
                                         Agregar otros presupuestos
                                       </button>
                                       <!-- Estructura del modal -->
