@@ -10,9 +10,14 @@ div {
     font-size: large;
     font-weight: bold;
 }
-@media (max-width: 1500px) {
+@media (max-width: 1500px) {table { 
+        
+    background-color: white;
+   
+}
     .hidden-mobile {
       display: none;
+      
     }
    
 }
@@ -37,9 +42,17 @@ body {background-color: rgba(245, 245, 245, 0.944);}
 .progress {
     height: 40px;
     border-radius: 10px;
+}table { 
+    table-layout:fixed;
+    
+    border-width: 4px;
+    border-bottom: 4px;
 }
-table {
-    border-collapse: collapse;
+td {
+  
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    word-wrap: break-word;
 }
 
 #formulariocarga {

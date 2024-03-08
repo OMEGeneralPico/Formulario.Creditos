@@ -433,7 +433,97 @@ function OcultarFormulario(){
 }
 var barra = document.getElementById("cargando");
 var mensajito = document.getElementById("mensajito");
-document.getElementById("botonfinal").addEventListener('click',OcultarFormulario);
+
+function AgregarModaltoArray(tipo) {
+    /*<input type="text" class="form-control" id="modaltipo" name="modaltipo" placeholder="" style="display: none;">
+    <label for="det">Detalle:</label><br>
+    <input type="text" class="form-control" id="det" name="det" placeholder="">
+    <label for="cant">Cantidad:</label><br>
+    <input type="text" class="form-control" id="cant" name="cant" placeholder="">
+    <label for="prec">Precio:</label><br>
+    <input type="text" class="form-control" id="prec" name="prec" placeholder="">
+    <label for="comproban">Comprobante:</label><br>
+    <input type="file" class="form-control"  id="comproban" name="comproban">*/
+
+   
+    if (tipo == "Equipamientos") {
+        let valor = document.getElementById('det').value == null ? 0 : document.getElementById('').value; 
+        Equipamiento[0].push(valor )
+         valor = document.getElementById('cant').value == null ? 0 : document.getElementById('').value; 
+        Equipamiento[1].push(valor );
+        valor = document.getElementById('prec').value == null ? 0 : document.getElementById('').value; 
+        Equipamiento[2].push(valor );
+        EquipamientoComp.push(document.getElementById('comproban').target.files[0]);
+    }else if (tipo == "Insumos") {
+        
+    }else{
+
+    }
+    
+}
+document.getElementById("botonModalEquip").addEventListener('click',AgregarModaltoArray('Equipamientos'));
+document.getElementById("botonModalIns").addEventListener('click',AgregarModaltoArray('Insumos'));
+document.getElementById("botonModalOtros").addEventListener('click',AgregarModaltoArray('Otros'));
 // Ejemplo de uso
 
 // Simulamos una carga de 2 segundos
+function addTable(tipo) {
+    const newRow = document.createElement("tr");
+
+    // Crea celdas con contenido dinámico (ajusta según tus necesidades)
+    const cell1 = document.createElement("td");
+    const inputText = document.createElement("input");
+    inputText.setAttribute("type", "text");
+    inputText.setAttribute("id", "cell1Input");
+    inputText.classList.add("form-control");
+   
+    inputText.classList.add("form-control-lg");
+    cell1.textContent = ""; // Elimina el texto "Nuevo dato 1"
+    cell1.appendChild(inputText); // Agrega el input text a la celda
+    newRow.appendChild(cell1);
+
+    const cell2 = document.createElement("td");
+    cell2.textContent = "";
+    const inputText2 = document.createElement("input");
+    inputText2.setAttribute("type", "text");
+    inputText2.setAttribute("id", "cell2Input");
+    inputText2.classList.add("form-control");
+    inputText2.classList.add("form-control-lg");
+    cell2.appendChild(inputText2);
+    newRow.appendChild(cell2);
+
+    const cell3 = document.createElement("td");
+    cell3.textContent = "";
+    const inputText3 = document.createElement("input");
+    inputText3.setAttribute("type", "text");
+    inputText3.setAttribute("id", "cell3Input");
+    inputText3.classList.add("form-control");
+    inputText3.classList.add("form-control-lg");
+    cell3.appendChild(inputText3);
+    newRow.appendChild(cell3);
+
+    const cell4 = document.createElement("td");
+    cell4.textContent = "";
+    const button = document.createElement("input");
+    button.setAttribute("type", "file");
+    button.setAttribute("class", "comprobante " + tipo);
+    button.setAttribute("multiple", "false");
+    button.classList.add("form-control");
+    button.classList.add("form-control-lg");
+    console.log(button.classList);
+    cell4.appendChild(button);
+
+    newRow.appendChild(cell4);
+
+
+
+
+
+    // ... (agrega más celdas según sea necesario)
+
+    const tbody = document.getElementById("tabla" + tipo);
+    tbody.appendChild(newRow);
+
+
+   
+}
