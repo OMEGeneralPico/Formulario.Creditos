@@ -280,9 +280,9 @@ var Insumos = [[], [], []];
 var Otros = [[], [], []];
 var respuestasZona = [];
 const tabla = document.getElementById("myTable");
-Equipamiento[0].push(document.getElementById("DetalleEquipamiento"));
-Equipamiento[1].push(document.getElementById("CantidadEquipamiento"));
-Equipamiento[2].push(document.getElementById("PrecioEquipamiento"));
+Equipamiento[0].push(document.getElementById("DetalleEquipamiento").value);
+Equipamiento[1].push(document.getElementById("CantidadEquipamiento").value);
+Equipamiento[2].push(document.getElementById("PrecioEquipamiento").value);
 
 document.getElementById("añadirEquip").addEventListener("click", () => {
     const tipo = "Equipo";
@@ -537,7 +537,7 @@ function addTable() {
     borrador.setAttribute("class", "fas fa-window-close");
     borrador.style.color = 'red'
     borrador.addEventListener('click', function() {
-        borrarFila(newRow)
+        borrarFila(newRow,tipo)
       });
     cell5.appendChild(borrador);
     newRow.appendChild(cell5);
@@ -554,7 +554,42 @@ function addTable() {
     document.getElementById('comproban').value = [];
    
 }
-function borrarFila(fila){
-    console.log(fila);
+function borrarFila(fila,tipo){
+    console.log(Equipamiento);
+
+    if (tipo == 'Equipamientos') {
+        for (let index = 0; index < 3; index++) {
+            let palabra = fila.childNodes[index].textContent;
+            let indice = Equipamiento[index].indexOf(palabra);
+            Equipamiento[index].splice(indice, 1);
+            console.log(Equipamiento);
+        }
+       
+      
+    }else if (tipo == 'Otros') {
+        for (let index = 0; index < 3; index++) {
+            let palabra = fila.childNodes[index].textContent;
+            let indice = Otros[index].indexOf(palabra);
+            Otros[index].splice(indice, 1);
+            console.log(Otros);
+        }
+    }else{
+        for (let index = 0; index < 3; index++) {
+            let palabra = fila.childNodes[index].textContent;
+            let indice = Insumos[index].indexOf(palabra);
+            Insumos[index].splice(indice, 1);
+            console.log(Insumos);
+        }
+    }
+  
+   
     fila.remove();
+
+    // borrar la referencia 
 }
+
+document.getElementById('prueba').addEventListener('click',function(){
+    console.log(Equipamiento);
+    console.log(Insumos);
+    console.log(Otros); 
+})
